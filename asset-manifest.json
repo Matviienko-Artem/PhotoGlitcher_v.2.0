@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/PhotoGlitcher_v.2.0/static/css/main.57d20cbb.css",
+    "main.js": "/PhotoGlitcher_v.2.0/static/js/main.0ff65732.js",
+    "index.html": "/PhotoGlitcher_v.2.0/index.html",
+    "static/media/download_icon.svg": "/PhotoGlitcher_v.2.0/static/media/download_icon.97583758f017c1d3d8c8.svg",
+    "main.57d20cbb.css.map": "/PhotoGlitcher_v.2.0/static/css/main.57d20cbb.css.map",
+    "main.0ff65732.js.map": "/PhotoGlitcher_v.2.0/static/js/main.0ff65732.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.57d20cbb.css",
+    "static/js/main.0ff65732.js"
+  ]
+}
