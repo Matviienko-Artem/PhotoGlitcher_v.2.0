@@ -1,0 +1,266 @@
+.App {
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+label {
+  margin-right: 10px;
+  font-weight: 600;
+  color: #fff;
+}
+span {
+  font-weight: 600;
+  color: #fff;
+}
+
+input {
+  width: 300px;
+  padding: 7px 10px;
+
+  border: 1px solid #fff;
+  border-radius: 10px;
+  outline: none;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+
+input#dowload_input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+label.dowload_input {
+  padding: 7px 10px;
+  border-radius: 10px;
+
+  font-weight: 700;
+
+  color: #ff3a00;
+  background: #fff;
+
+  cursor: pointer;
+}
+
+.nav_bar {
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  background: linear-gradient(135deg, #a21dd3, #ff3a00);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.nav_bar form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav_bar form div {
+  margin: 5px;
+}
+
+button {
+  margin: 0 10px;
+  padding: 7px 10px;
+
+  color: #ff3a00;
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  outline: none;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: all 400ms ease;
+}
+
+button:disabled {
+  color: #999;
+  background-color: #eee;
+}
+
+button:hover:not(:disabled),
+button:focus:not(:disabled) {
+  color: #fff;
+  background: #a21dd3;
+  border: 1px solid #a21dd3;
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.grid {
+  padding: 20px 0;
+  position: relative;
+  margin: 0 auto;
+  height: calc(100vh - 75px);
+  width: 100%;
+  max-width: 1440px;
+
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.navigation {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  max-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.glitched .navigation {
+  position: static;
+}
+.navigation button {
+  color: #fff;
+  border: none;
+}
+.navigation button.request {
+  background: #a21dd3;
+}
+
+.navigation button.next {
+  background: #ff3a00;
+  border: 1px solid #ff3a00;
+}
+
+.img_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img {
+  height: fit-content;
+  max-height: calc(100vh - 105px);
+  object-fit: contain;
+}
+
+/* .glitch_box {
+  display: flex;
+  align-items: center;
+} */
+
+.glitched_container {
+  padding: 5px;
+  position: relative;
+  display: flex;
+  height: fit-content;
+  width: 33%;
+  border: 2px solid #fff;
+  outline: none;
+  transition: all 400ms ease;
+}
+
+.glitched_container:hover,
+.glitched_container:focus,
+.glitched_container.selected {
+  border: 2px solid #ff3a00;
+}
+.glitched_container::after {
+  content: "";
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #ff3a00;
+  background-image: url(./icons/download_icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 400ms ease;
+
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.glitched_container:hover::after,
+.glitched_container:focus::after,
+.glitched_container.selected::after {
+  opacity: 1;
+}
+
+.glitched_img {
+  cursor: pointer;
+}
+
+.preview {
+  background-color: #f7f7f7;
+  text-align: center;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background-color: #f7f7f7;
+}
+
+.wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+}
+.wrapper.open {
+  pointer-events: initial;
+  opacity: 1;
+}
+.modal {
+  display: flex;
+  background-color: #f7f7f7;
+}
+
+.modal img {
+  max-width: 200px;
+}
+
+div[data-testid="puff-loading"] {
+  position: absolute;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
